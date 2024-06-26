@@ -1,5 +1,5 @@
 import './Todo.module.scss';
 
-export const Todo = () => {
-  return <h1>This is Todo</h1>;
+export const Todo = ({ todo }) => {
+  return <h3>{todo}</h3>;
 };
