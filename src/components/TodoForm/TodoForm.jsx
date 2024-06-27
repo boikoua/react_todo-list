@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Button } from '../UI/Button';
 import styles from './TodoForm.module.scss';
 
 export const TodoForm = ({ addTodo }) => {
@@ -6,7 +7,7 @@ export const TodoForm = ({ addTodo }) => {
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    addTodo(text);
+    text.trim() !== '' && addTodo(text);
     setText('');
   };
 
@@ -19,9 +20,7 @@ export const TodoForm = ({ addTodo }) => {
         placeholder="Enter new todo"
         onChange={(event) => setText(event.target.value)}
       />
-      <button className={styles.TodoForm__btn} type="submit">
-        Submit
-      </button>
+      <Button children={'Submit'} />
     </form>
   );
 };

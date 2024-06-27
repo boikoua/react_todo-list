@@ -10,20 +10,7 @@
     font-size: 1.3rem;
   }
 
-  &__btn {
-    margin-left: 20px;
-    height: 50px;
-    cursor: pointer;
-    background-color: rgb(245, 245, 219);
-    font-size: 1.5rem;
-
-    &:hover {
-      background-color: rgb(240, 240, 155);
-    }
-  }
-
-  &__input,
-  &__btn {
+  &__input {
     padding: 10px 15px;
     border: none;
     border-radius: 5px;

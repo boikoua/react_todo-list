@@ -1,0 +1,14 @@
+.Button {
+  margin-left: 20px;
+  padding: 10px 15px;
+  height: 50px;
+  background-color: rgb(245, 245, 219);
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(240, 240, 155);
+  }
+}
