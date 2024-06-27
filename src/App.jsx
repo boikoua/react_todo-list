@@ -50,19 +50,30 @@ export const App = () => {
     setTodos(todos.filter((todo) => todo.isCompleted !== true));
   };
 
+  const completedTodosCount = todos.filter((todo) => todo.isCompleted).length;
+
   return (
     <div className="App">
       <h1 className="App__title">Todo App</h1>
       <TodoForm addTodo={addTodoHandler} />
-      <TodoActions
-        resetTodos={resetTodosHandler}
-        deletedCompletedTodos={deletedCompletedTodosHandler}
-      />
+      {todos.length > 0 && (
+        <TodoActions
+          resetTodos={resetTodosHandler}
+          deletedCompletedTodos={deletedCompletedTodosHandler}
+          completedTodosExist={!!completedTodosCount}
+        />
+      )}
       <TodoList
         todos={todos}
         deleteTodo={deleteTodoHandler}
         toggleTodo={toggleTodoHandler}
       />
+      {completedTodosCount > 0 && (
+        <h3>
+          You have completed {completedTodosCount}{' '}
+          {completedTodosCount > 1 ? 'todos' : 'todo'}!
+        </h3>
+      )}
     </div>
   );
 };
